@@ -7,12 +7,63 @@
     <title>Your application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+<!--    <script src="https://apps.wavemakeronline.com/WeavrBank/services/application/wmProperties.js"></script>-->
+    <script type="application/javascript">
+      var _WM_APP_PROPERTIES = {
+        "preferredLanguage" : "en-US,en;q=0.9",
+        "isTestRuntime" : false,
+        "dateFormat" : "",
+        "displayName" : "WeavrBank",
+        "platformType" : "WEB",
+        "xsrf_header_name" : "X-WM-XSRF-TOKEN",
+        "type" : "APPLICATION",
+        "version" : "1.0",
+        "homePage" : "RegisterUser",
+        "defaultLanguage" : "en",
+        "preferBrowserLang" : "true",
+        "supportedLanguages" : {
+          "en" : {
+            "angular" : "en",
+            "fullCalendar" : null,
+            "moment" : null
+          }
+        },
+        "activeTheme" : "Banking_Theme2",
+        "timeFormat" : "",
+        "securityEnabled" : true
+      };
+      //dummy
+      window.OpcUxSecureClient = {init: function(){}};
+    </script>
+    <script src="http://localhost:3333/scripts.js"></script>
+    <link href="http://localhost:3333/styles.css">
     <script type="systemjs-importmap">
       {
         "imports": {
-          "app1": "http://localhost:4201/main.js",
+          "home": "http://localhost:4201/main.js",
           "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4300/main.js",
+          "wmapp": "http://localhost:3333/main-es2015.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js",
           "single-spa-layout": "https://unpkg.com/single-spa-layout@1.0.0-beta.2/dist/system/single-spa-layout.min.js"
         }
@@ -28,21 +79,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
     <template id="single-spa-layout">
       <single-spa-router>
-        <nav class="topnav">
+        <nav>
           <application name="navbar"></application>
         </nav>
         <div class="main-content">
-          <route path="app1">
-            <application name="app1"></application>
+          <route path="/home">
+            <application name="home"></application>
           </route>
           <route path="app2">
             <application name="app2"></application>
+          </route>
+          <route path="wmapp">
+            <application name="wmapp"></application>
           </route>
         </div>
       </single-spa-router>
     </template>
   </head>
-  <body>
+  <body class="sspa-content wm-app">
+<!--  <div class="wm-app">&lt;!&ndash;temp div for wm code &ndash;&gt;</div>-->
     <script>
       Promise.all([System.import('single-spa'), System.import('single-spa-layout')]).then(([singleSpa, singleSpaLayout]) => {
         const { constructApplications, constructLayoutEngine, constructRoutes } = singleSpaLayout;
@@ -62,5 +117,7 @@
       });
     </script>
     <import-map-overrides-full></import-map-overrides-full>
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
   </body>
 </html>

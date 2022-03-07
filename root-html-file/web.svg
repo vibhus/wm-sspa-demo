@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="333" height="210" viewBox="0 0 333 210">
+    <defs>
+        <linearGradient id="qdmpaeue3c" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".704"/>
+        </linearGradient>
+        <linearGradient id="2fcqz53kce" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF" stop-opacity=".3"/>
+        </linearGradient>
+        <radialGradient id="a5yx6l3xxb" cx="60.641%" cy="50%" r="93.925%" fx="60.641%" fy="50%" gradientTransform="translate(0.606406,0.500000),scale(0.630631,1.000000),rotate(30.543975),translate(-0.606406,-0.500000)">
+            <stop offset="0%" stop-color="#E6FAFF"/>
+            <stop offset="100%" stop-color="#B7E9F4"/>
+        </radialGradient>
+        <rect id="3z57b6d69a" width="333" height="210" x="0" y="0" rx="14"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-303.000000, -165.000000) translate(303.000000, 165.000000)">
+                <mask id="uo96cpyogd" fill="#fff">
+                    <use xlink:href="#3z57b6d69a"/>
+                </mask>
+                <use fill="url(#a5yx6l3xxb)" xlink:href="#3z57b6d69a"/>
+                <path fill="url(#qdmpaeue3c)" d="M137 0h182c7.732 0 14 6.268 14 14v182c0 7.732-6.268 14-14 14h-35L137 0z" mask="url(#uo96cpyogd)"/>
+                <path fill="url(#2fcqz53kce)" d="M0 0h182c7.732 0 14 6.268 14 14v182c0 7.732-6.268 14-14 14h-35L0 0z" mask="url(#uo96cpyogd)" transform="translate(98.000000, 105.000000) scale(-1, -1) translate(-98.000000, -105.000000)"/>
+            </g>
+        </g>
+    </g>
+</svg>
