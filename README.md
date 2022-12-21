@@ -66,6 +66,17 @@ npm start
 Now go to http://localhost:4200 in a browser. Note that you can change any of the ports for the projects by modifying the Import Map inside of
 root-html-file/index.html.
 
+# Steps to add a [WaveMaker]((https://wavemaker.com)) app to this setup
+* Download a WM project (e.g. BrightBank) zip
+* Extract the project from zip and in terminal run the command, `npx @wavemaker/wm-sspa-cli -p ${PROJECT_PATH} -d ${APP_DEPLOY_URL} -s ${SSPA_DEPLOY_URL}`
+  * `${PROJECT_PATH}` is the local directory path to the wm project extracted in above steps
+  * `${APP_DEPLOY_URL}` is the URL where the wm app is deployed. It could be on WMO cloud or local tomcat server
+  * `${SSPA_DEPLOY_URL}` is the URL where you will deploy the sspa dist files. This will be mostly locally deployed for demo. For this project give the value `http://localhost:3333/`
+* The SSPA dist will be generated in the folder `project/wm-sspa-dist`
+* Run `cd ${PROJECT_PATH}/wm-sspa-dist`
+* Run `npx http-server -p 3333 --cors`
+* In the main app running on localhost:4200, click on 'Get Started' and verify that the wm app is loaded.
+
 If you get serious about deploying your code, you'll want to make it no longer necessary to boot up all of the apps in order to do anything.
 When you get to that point, check out [import-map-overrides](https://github.com/joeldenning/import-map-overrides/), which lets you go to
 a deployed environment and override the [Import Map](https://github.com/WICG/import-maps) for just one microfrontend at a time. The

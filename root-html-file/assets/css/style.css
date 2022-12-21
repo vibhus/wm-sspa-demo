@@ -2056,3 +2056,7 @@ app-partial-header section div[wmlayoutgrid] {
   color: #4154f1 !important;
   border-left: 3px solid #4154f1 !important;
 }
+
+.wm-app .app-wizard.number.vertical .app-wizard-actions.panel-footer {
+  bottom: 120px !important;
+}
